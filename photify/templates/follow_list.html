@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/follow_list.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+{% block content %}
+    <div class="follow-list-area">
+        <div class="follow-list-container">
+            <div class="follow-list-header">
+                <h3>FOLLOWED</h3>
+            </div>
+            <div class="follow-list-content">
+                {% for followed_user in followed %}
+                    <div class="follow-list-entry">
+                        <div class="follower-name">
+                            <a class="go-to-profile" href={% url 'profile' profile_id=followed_user.user_id %}><p>
+                                <strong>{{ followed_user.user.username }}</strong></p></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="follow-list-area">
+        <div class="follow-list-container">
+            <div class="follow-list-header">
+                <h3>FOLLOWERS</h3>
+            </div>
+            <div class="follow-list-content">
+                {% for follower_user in followers %}
+                    <div class="follow-list-entry">
+                        <div class="follower-name">
+                            <a class="go-to-profile" href={% url 'profile' profile_id=follower_user.follower_id %}><p>
+                                <strong>{{ follower_user.follower.username }}</strong></p></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

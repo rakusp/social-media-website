@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/login.scss' %}" rel="stylesheet" media="screen">
+{% endblock extra-css %}
+{% block content %}
+    <div id="login-main-container">
+        <div id="login-form-container">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <table>
+                    {% if form.errors %}
+                        <tr>
+                            <td colspan="2" class="error-message">Your username and
+                                password didn't match. Please try again.
+                            </td>
+                        </tr>
+                    {% endif %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <tr>
+                                <td colspan="2" class="error-message">{{ message }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    <tr>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.email.label_tag }}</td>
+                        <td>{{ form.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Log In">
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </td>
+                    </tr>
+                <tr>
+                    <td colspan="2"><p>Don't have an account yet? <a href="{% url 'register_user' %}">Create one.</a></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p><a href="{% url 'reset_password_request' %}">Forgot your password?</a></p></td>
+                </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+{% endblock %}

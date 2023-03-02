@@ -1,0 +1,11 @@
+{% autoescape off %}
+    Hi {{ user.username }},
+    Thank you for joining us at photify!
+
+    To activate your account, please click the link below.
+    {{ protocol }}://{{ domain }}{% url 'activate_account' uidb64=uid token=token %}
+    The link will expire in 24 hours.
+
+    Sincerely,
+    Photify
+{% endautoescape %}

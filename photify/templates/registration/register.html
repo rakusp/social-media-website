@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/login.scss' %}" rel="stylesheet" media="screen">
+{% endblock extra-css %}
+{% block content %}
+    <div id="login-main-container">
+        <div id="login-form-container">
+            <form method="post" action="{% url 'register_user' %}">
+                {% csrf_token %}
+                <table>
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <tr>
+                                    <td colspan="2" class="error-message">{{ error }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                    <tr>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.email.label_tag }}</td>
+                        <td>{{ form.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.password1.label_tag }}</td>
+                        <td>{{ form.password1 }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{ form.password1.help_text }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.password2.label_tag }}</td>
+                        <td>{{ form.password2 }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{ form.password2.help_text }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Register">
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <p>Already have an account? <a href="{% url 'login' %}">Log in.</a></p>
+        </div>
+    </div>
+
+{% endblock %}

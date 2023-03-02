@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/profile.scss' %}" rel="stylesheet" media="screen">
+{% endblock extra-css %}
+{% block content %}
+    <div id="main-thread">
+        <div class="profile-container" id="profile-info">
+            <div id="profile-details">
+                <p id="profile-username"><strong>{{ profile.username }}</strong></p>
+                <p id="follower-count">Followers: {{ follower_count }}</p>
+            </div>
+            <div id="profile-follow">
+                <input type="button" id="follow-button" value="..."/>
+            </div>
+        </div>
+        <div class="profile-container" id="profile-posts">
+            <div id="profile-posts-header">
+                <p id="profile-posts-header-text"><strong>POSTS</strong></p>
+            </div>
+            <div id="profile-images">
+                {% for post in posts %}
+                    <div class="profile-image-container">
+                        <img class="profile-image" src="{% url 'get_post_image' img_name=post.filename %}"
+                             alt="post image">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script onload="setup_follow_button('{{ follow_status }}', '{{ profile.id }}')"
+            src="{% static 'js/profile.js' %}"></script>
+{% endblock content %}

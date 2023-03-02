@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load compress %}
+{% compress css %}
+    <link type="text/x-scss" href="{% static 'style/base.scss' %}" rel="stylesheet" media="screen">
+    {% block extra-css %}
+    {% endblock extra-css %}
+{% endcompress %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>photify</title>
+    <script src="{% static 'js/cookies.js' %}"></script>
+    {% block extra-head %}
+    {% endblock extra-head %}
+</head>
+<body>
+{% include 'header.html' %}
+
+<div id="main">
+    {% block content %}
+        <h1 style="color: white;">This page is currently empty :(</h1>
+    {% endblock content %}
+</div>
+<script src="{% static 'js/header.js' %}"></script>
+</body>
+</html>

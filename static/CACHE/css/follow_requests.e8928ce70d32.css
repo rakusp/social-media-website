@@ -1,0 +1,64 @@
+/* line 3, photify/static/style/follow_requests.scss */
+#follow-requests-area {
+  position: fixed;
+  width: 25%;
+  left: 1%;
+  height: 80%; }
+  /* line 9, photify/static/style/follow_requests.scss */
+  #follow-requests-area #follow-requests-container {
+    border-radius: 10px;
+    border: solid 1px #3a3b3c;
+    max-height: 100%;
+    background-color: #242526; }
+    /* line 15, photify/static/style/follow_requests.scss */
+    #follow-requests-area #follow-requests-container #follow-requests-header {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: solid 1px #3a3b3c;
+      text-align: center;
+      background-color: #18191a;
+      height: 10%; }
+      /* line 23, photify/static/style/follow_requests.scss */
+      #follow-requests-area #follow-requests-container #follow-requests-header h3 {
+        color: white;
+        font-family: Helvetica, sans-serif; }
+    /* line 29, photify/static/style/follow_requests.scss */
+    #follow-requests-area #follow-requests-container #follow-requests-list {
+      height: 90%;
+      overflow-y: scroll;
+      overflow-x: clip; }
+      /* line 34, photify/static/style/follow_requests.scss */
+      #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container {
+        border-top: solid 1px #3a3b3c;
+        margin-bottom: 2%; }
+        /* line 38, photify/static/style/follow_requests.scss */
+        #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-name {
+          margin-left: 2%; }
+          /* line 41, photify/static/style/follow_requests.scss */
+          #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-name p {
+            margin-top: 2%;
+            margin-bottom: 2%; }
+        /* line 49, photify/static/style/follow_requests.scss */
+        #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-actions {
+          display: flex; }
+          /* line 52, photify/static/style/follow_requests.scss */
+          #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-actions button {
+            cursor: pointer;
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: 2%;
+            margin-left: 2%; }
+          /* line 65, photify/static/style/follow_requests.scss */
+          #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-actions .accept-button {
+            background-color: cornflowerblue; }
+          /* line 69, photify/static/style/follow_requests.scss */
+          #follow-requests-area #follow-requests-container #follow-requests-list .follow-request-container .follower-actions .reject-button {
+            background-color: dimgray; }
+
+@media (max-device-width: 1000px) {
+  /* line 79, photify/static/style/follow_requests.scss */
+  #follow-requests-area {
+    width: 35%; } }

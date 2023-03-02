@@ -1,0 +1,183 @@
+/* line 5, photify/static/style/header.scss */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8%;
+  width: 100%;
+  background-color: #242526;
+  border-image: linear-gradient(to right, #f05a28, #e80a89) 1 3 1 stretch;
+  border-style: solid;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  z-index: 1; }
+  /* line 21, photify/static/style/header.scss */
+  #header #header-content {
+    display: flex;
+    height: 100%;
+    align-items: center; }
+    /* line 27, photify/static/style/header.scss */
+    #header #header-content #logo-container {
+      margin-left: 1%;
+      max-width: 35%; }
+      /* line 31, photify/static/style/header.scss */
+      #header #header-content #logo-container #photify-logo {
+        width: 85%; }
+    /* line 36, photify/static/style/header.scss */
+    #header #header-content #search-container {
+      margin: auto auto;
+      width: 25%; }
+      /* line 40, photify/static/style/header.scss */
+      #header #header-content #search-container #search-input {
+        height: 2em;
+        width: 100%;
+        border: solid 1px #3a3b3c;
+        border-radius: 10px;
+        background: transparent url("/static/header/search.png") no-repeat 3% center;
+        background-size: 6%;
+        padding-left: 15%;
+        padding-top: 3%;
+        padding-bottom: 3%; }
+      /* line 54, photify/static/style/header.scss */
+      #header #header-content #search-container #search-input:focus {
+        box-shadow: 0 0 3px 0 #1183d6;
+        border-color: #1183d6;
+        outline: none; }
+    /* line 61, photify/static/style/header.scss */
+    #header #header-content #logged-in-container {
+      display: flex;
+      float: right;
+      margin: auto auto;
+      text-align: center;
+      height: 40%;
+      width: 20%; }
+      /* line 69, photify/static/style/header.scss */
+      #header #header-content #logged-in-container p {
+        margin: 0; }
+    /* line 74, photify/static/style/header.scss */
+    #header #header-content #index-container {
+      overflow: hidden;
+      height: 100%;
+      margin-right: 1%;
+      margin-left: 5%; }
+      /* line 82, photify/static/style/header.scss */
+      #header #header-content #index-container #header-more-image {
+        height: 80%;
+        margin-top: 10%;
+        margin-bottom: 10%; }
+      /* line 90, photify/static/style/header.scss */
+      #header #header-content #index-container #index-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #242526;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        direction: ltr; }
+        /* line 99, photify/static/style/header.scss */
+        #header #header-content #index-container #index-dropdown-content a {
+          all: unset;
+          cursor: pointer; }
+        /* line 104, photify/static/style/header.scss */
+        #header #header-content #index-container #index-dropdown-content .dropdown-content-row {
+          margin: 0;
+          height: auto; }
+          /* line 108, photify/static/style/header.scss */
+          #header #header-content #index-container #index-dropdown-content .dropdown-content-row p {
+            margin: 5%; }
+
+/* line 118, photify/static/style/header.scss */
+#index-container:hover, #photify-logo:hover, .dropdown-content-row:hover {
+  background-color: #3a3b3c; }
+
+/* line 122, photify/static/style/header.scss */
+#index-container {
+  direction: rtl; }
+
+/* line 6, photify/static/style/base.scss */
+html {
+  height: 100%; }
+
+/* line 10, photify/static/style/base.scss */
+body {
+  min-height: 90%; }
+
+/* line 14, photify/static/style/base.scss */
+p, label {
+  color: white;
+  font-family: Helvetica, sans-serif; }
+
+/* line 19, photify/static/style/base.scss */
+:root {
+  color-scheme: dark; }
+
+/* line 23, photify/static/style/base.scss */
+.go-to-profile {
+  text-decoration: none;
+  color: white;
+  cursor: pointer; }
+
+/* line 30, photify/static/style/base.scss */
+#posts-thread {
+  position: relative;
+  width: 40%;
+  margin-top: 8%;
+  margin-left: 30%;
+  margin-right: 30%; }
+
+/* line 40, photify/static/style/base.scss */
+.post-container {
+  margin-bottom: 3em;
+  border-radius: 10px;
+  border: solid 1px #3a3b3c;
+  background-color: #242526; }
+  /* line 48, photify/static/style/base.scss */
+  .post-container .post p {
+    margin: 1% 0 0 1%; }
+  /* line 52, photify/static/style/base.scss */
+  .post-container .post .image-container {
+    background-color: #18191a;
+    border-radius: 10px; }
+    /* line 56, photify/static/style/base.scss */
+    .post-container .post .image-container .post-image {
+      width: 100%;
+      object-fit: contain;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom: solid 1px #3a3b3c; }
+  /* line 67, photify/static/style/base.scss */
+  .post-container .post .post-details {
+    display: flex; }
+    /* line 70, photify/static/style/base.scss */
+    .post-container .post .post-details .post-caption {
+      width: 75%; }
+    /* line 74, photify/static/style/base.scss */
+    .post-container .post .post-details .post-likes {
+      display: flex;
+      width: 25%;
+      height: 40%; }
+      /* line 79, photify/static/style/base.scss */
+      .post-container .post .post-details .post-likes .like-count-container {
+        width: 70%;
+        text-align: right;
+        margin-right: 2%; }
+      /* line 85, photify/static/style/base.scss */
+      .post-container .post .post-details .post-likes .like-icon-container {
+        width: 30%; }
+        /* line 88, photify/static/style/base.scss */
+        .post-container .post .post-details .post-likes .like-icon-container .like-icon {
+          width: 100%;
+          object-fit: contain;
+          cursor: pointer; }
+
+/* line 99, photify/static/style/base.scss */
+body {
+  background-color: #18191a; }
+
+@media (max-device-width: 1000px) {
+  /* line 104, photify/static/style/base.scss */
+  #posts-thread {
+    width: 60%;
+    margin-right: 1%;
+    margin-left: 39%; } }

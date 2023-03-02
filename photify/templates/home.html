@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load el_pagination_tags %}
+{% load static %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/follow_requests.scss' %}" rel="stylesheet" media="screen">
+    <link type="text/x-scss" href="{% static 'style/post_creation.scss' %}" rel="stylesheet" media="screen">
+{% endblock extra-css %}
+{% block extra-head %}
+    <script src="{% static 'js/post.js' %}"></script>
+    <script src="{% static 'js/follow_requests.js' %}"></script>
+    <script src="{% static 'js/post_creation.js' %}"></script>
+{% endblock extra-head %}
+{% block content %}
+    {% include 'follow_requests.html' %}
+    <div id="posts-thread">
+        <div class="post-container">
+            <div class="post">
+                {% include 'post_creation.html' %}
+            </div>
+        </div>
+        {% include page_template %}
+    </div>
+    {% block js %}
+        {{ block.super }}
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="{% get_static_prefix %}el-pagination/js/el-pagination.js"></script>
+        <script>
+            $.endlessPaginate({
+                paginateOnScroll: true,
+                paginateOnScrollMargin: 100,
+            });
+        </script>
+    {% endblock %}
+{% endblock content %}

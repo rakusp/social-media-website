@@ -1,0 +1,43 @@
+{% load static %}
+{% load el_pagination_tags %}
+
+{% lazy_paginate 10,10 post_list %}
+{% for post in post_list %}
+    <div class="post-container">
+        <div class="post">
+            <div class="image-container">
+                <img class="post-image" src="{% url 'get_post_image' img_name=post.filename %}" alt="post image"
+                     onload="adjust_image_size(this);">
+            </div>
+            <div class="post-details">
+                <div class="post-caption">
+                    <p>
+                    <a class="go-to-profile" href={% url 'profile' profile_id=post.author_id %}>
+                        <strong>{{ post.author }}</strong>
+                    </a>: {{ post.caption }}
+                    </p>
+                    <p style="font-size: 75%; color: gray;">{{ post.published_date }}</p>
+                </div>
+                <div class="post-likes">
+                    <div class="like-count-container">
+                        <p id="post{{ post.id }}-like-count">
+                            <strong>{{ post.likes }}</strong>
+                        </p>
+                    </div>
+                    <div class="like-icon-container">
+                        {% if post.liked %}
+                            <img data-liked="true" class="like-icon"
+                                 onclick="like(this, {{ post.id }}, {{ user.id }})"
+                                 src="{% get_static_prefix %}{{ "post/heart-full.png" }}" alt="post like icon">
+                        {% else %}
+                            <img data-liked="false" class="like-icon"
+                                 onclick="like(this, {{ post.id }}, {{ user.id }})"
+                                 src="{% get_static_prefix %}{{ "post/heart-empty.png" }}" alt="post like icon">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% show_more %}

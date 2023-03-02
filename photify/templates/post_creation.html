@@ -1,0 +1,27 @@
+<form method="post" action="{% url 'add_post' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="post-form-header">
+        <h2>
+            Make a new post
+        </h2>
+    </div>
+    <div id="post-form-image-container">
+        {{ post_form.image.label_tag }}
+        {{ post_form.image }}
+    </div>
+    <div class="image-container">
+        <img class="post-image" id="preview-image" src="#" alt="your image"/>
+    </div>
+    <div id="post-form-caption-container">
+        {{ post_form.caption }}
+    </div>
+    <div id="post-form-buttons">
+        <div id="post-form-private-container">
+            {{ post_form.private.label_tag }}
+            {{ post_form.private }}
+        </div>
+        <div id="post-form-add-container">
+            <input id="post-form-submit" type="submit" value="Add post">
+        </div>
+    </div>
+</form>

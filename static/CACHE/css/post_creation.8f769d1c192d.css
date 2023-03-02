@@ -1,0 +1,48 @@
+/* line 3, photify/static/style/post_creation.scss */
+#post-form-header {
+  text-align: center;
+  background-color: #18191a;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; }
+  /* line 11, photify/static/style/post_creation.scss */
+  #post-form-header h2 {
+    margin: 0; }
+
+/* line 16, photify/static/style/post_creation.scss */
+#post-form-caption-field {
+  width: 96%;
+  margin-left: 2%;
+  resize: none; }
+
+/* line 22, photify/static/style/post_creation.scss */
+#post-form-image-container {
+  margin: 2% 2%; }
+
+/* line 26, photify/static/style/post_creation.scss */
+#post-form-caption-container {
+  margin: 2% auto; }
+
+/* line 30, photify/static/style/post_creation.scss */
+#preview-image {
+  display: none; }
+
+/* line 34, photify/static/style/post_creation.scss */
+#post-form-buttons {
+  display: flex;
+  padding-bottom: 1%; }
+  /* line 38, photify/static/style/post_creation.scss */
+  #post-form-buttons #post-form-private-container {
+    margin-left: 2%; }
+  /* line 42, photify/static/style/post_creation.scss */
+  #post-form-buttons #post-form-add-container {
+    margin-left: auto;
+    margin-right: 1%;
+    width: 30%; }
+    /* line 47, photify/static/style/post_creation.scss */
+    #post-form-buttons #post-form-add-container #post-form-submit {
+      background-color: cornflowerblue;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: none;
+      border: solid 1px #3a3b3c; }

@@ -1,0 +1,60 @@
+{% load static %}
+{% load compress %}
+{% block extra-css %}
+    <link type="text/x-scss" href="{% static 'style/base.scss' %}" rel="stylesheet" media="screen">
+{% endblock extra-css %}
+<div id="header">
+    <div id="header-content">
+        <div id="logo-container">
+            <a href="/home/">
+                <img id="photify-logo" src="{% get_static_prefix %}{{ 'logo/photify_logo.png' }}" alt="photify logo">
+            </a>
+        </div>
+        {% if request.user.is_authenticated %}
+            <div id="search-container">
+                <form>
+                    {% csrf_token %}
+                    <input id="search-input" type="search" placeholder="Search user...">
+                </form>
+            </div>
+        {% endif %}
+        <div id="logged-in-container">
+            {% if request.user.is_authenticated %}
+                <p>Logged in: <strong>{{ user.username }}</strong></p>
+            {% endif %}
+        </div>
+        <div id="index-container">
+            <img id="header-more-image" src="{% get_static_prefix %}header/header-more.png" alt="more icon">
+            <div id="index-dropdown-content">
+                {% if user.username %}
+                    <a href={% url 'profile' profile_id=request.user.id %}>
+                        <div class="dropdown-content-row">
+                            <p>Profile</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'follow_list' %}">
+                        <div class="dropdown-content-row">
+                            <p>Follows</p>
+                        </div>
+                    </a>
+                    <a href={% url 'change_password' %}>
+                        <div class="dropdown-content-row">
+                            <p>Change password</p>
+                        </div>
+                    </a>
+                    <a href={% url 'logout' %}>
+                        <div class="dropdown-content-row">
+                            <p>Log out</p>
+                        </div>
+                    </a>
+                {% else %}
+                    <a href={% url 'login' %}>
+                        <div class="dropdown-content-row">
+                            <p>Log in</p>
+                        </div>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

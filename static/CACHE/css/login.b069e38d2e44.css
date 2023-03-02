@@ -1,0 +1,45 @@
+/* line 3, photify/static/style/login.scss */
+#main {
+  width: 100%;
+  height: 90vh;
+  margin: auto; }
+
+/* line 9, photify/static/style/login.scss */
+table {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 14, photify/static/style/login.scss */
+p {
+  margin: 2% auto; }
+
+/* line 18, photify/static/style/login.scss */
+.error-message {
+  background-color: red;
+  text-align: center; }
+
+/* line 23, photify/static/style/login.scss */
+#login-main-container {
+  position: relative;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  height: 55%;
+  background-color: #242526;
+  border: solid 1px #3a3b3c;
+  border-radius: 10px; }
+  /* line 33, photify/static/style/login.scss */
+  #login-main-container #login-form-container {
+    width: 80%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
+@media (max-device-width: 1000px) {
+  /* line 46, photify/static/style/login.scss */
+  #login-main-container {
+    width: 90%;
+    left: 5%; } }

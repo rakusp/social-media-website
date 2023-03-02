@@ -1,0 +1,42 @@
+@import 'palette';
+
+#main {
+  display: flex;
+}
+
+.follow-list-area {
+  width: 50%;
+
+  .follow-list-container {
+    width: 70%;
+    margin: 10% auto;
+    border-radius: $border-radius;
+    border: $primary-border;
+    background-color: $primary-color;
+
+    .follow-list-header {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      border: $primary-border;
+      text-align: center;
+      background-color: $background-color;
+      height: 10%;
+
+      h3 {
+        color: white;
+        font-family: Helvetica, sans-serif;
+      }
+    }
+
+    .follow-list-content {
+
+      .follow-list-entry {
+        text-align: center;
+
+        p {
+          margin: 2% auto;
+        }
+      }
+    }
+  }
+}

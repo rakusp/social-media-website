@@ -1,0 +1,56 @@
+@import 'palette';
+
+#post-form-header {
+  text-align: center;
+  background-color:  $background-color;
+  border: {
+    top-right-radius: $border-radius;
+    top-left-radius: $border-radius;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+#post-form-caption-field {
+  width: 96%;
+  margin-left: 2%;
+  resize: none;
+}
+
+#post-form-image-container {
+  margin: 2% 2%;
+}
+
+#post-form-caption-container {
+  margin: 2% auto;
+}
+
+#preview-image {
+  display: none;
+}
+
+#post-form-buttons {
+  display: flex;
+  padding-bottom: 1%;
+
+  #post-form-private-container {
+    margin-left: 2%;
+  }
+
+  #post-form-add-container {
+    margin-left: auto;
+    margin-right: 1%;
+    width: 30%;
+
+    #post-form-submit {
+      background-color: $positive-action-color;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: none;
+      border: $primary-border;
+    }
+  }
+}

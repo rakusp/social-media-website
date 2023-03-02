@@ -1,0 +1,28 @@
+<div id="follow-requests-area">
+    <div id="follow-requests-container">
+        <div id="follow-requests-header">
+            <h3>FOLLOW REQUESTS</h3>
+        </div>
+        <div id="follow-requests-list">
+            {% for follow_request in follow_requests %}
+                <div id="request{{ follow_request.user_from_id }}-{{ follow_request.user_to_id }}"
+                     class="follow-request-container">
+                    <div class="follower-name">
+                        <a class="go-to-profile" href={% url 'profile' profile_id=follow_request.user_from_id %}><p>
+                            <strong>{{ follow_request.user_from.username }}</strong></p></a>
+                    </div>
+                    <div class="follower-actions">
+                        <button onclick="follow_request_action({{ follow_request.user_from_id }},
+                                {{ follow_request.user_to_id }}, 'accept')"
+                                class="accept-button">Accept
+                        </button>
+                        <button onclick="follow_request_action({{ follow_request.user_from_id }},
+                                {{ follow_request.user_to_id }}, 'reject')"
+                                class="reject-button">Reject
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
