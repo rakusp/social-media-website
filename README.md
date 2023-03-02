@@ -3,10 +3,10 @@
 ### Patryk Rakus
 
 ### Main page:
-![Alt text](/screenshots/main.jpg?raw=true "Screenshot of the home page")
+![Alt text](/screenshots/main.png?raw=true "Screenshot of the home page")
 
 ### Profile page:
-![Alt text](/screenshots/profile.jpg?raw=true "Screenshot of the user profile page")
+![Alt text](/screenshots/profile.png?raw=true "Screenshot of the user profile page")
 
 
 Admin:
